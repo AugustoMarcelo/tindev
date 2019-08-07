@@ -16,7 +16,7 @@ module.exports = {
 		});
 
 		return res.json(users);
-	}
+	},
 
 	async store(req, res) {
 		const { username } = req.body;
