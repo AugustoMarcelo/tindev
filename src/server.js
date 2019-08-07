@@ -7,7 +7,7 @@ const routes = require('./routes');
 // Criando instância do express
 const server = express();
 
-mongoose.connect('url do mongoose atlas', { 
+mongoose.connect('mongodb+srv://tindev:tindev@cluster0-6xi6w.mongodb.net/omnistack8?retryWrites=true&w=majority', { 
 	useNewUrlParser: true 
 });
 
