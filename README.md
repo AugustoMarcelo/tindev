@@ -1,5 +1,7 @@
 # Semana Omnistack #8 | Rocketseat
  - Desenvolvimento de uma aplicação utilizando a stack *Node.js*, *ReactJS* e *React Native*
+ - O Frontend da aplicação pode ser encontrado <a href="https://github.com/AugustoMarcelo/tindev-frontend">aqui</a>
+ - O Mobile da aplicação pode ser encontrado <a href="https://github.com/AugustoMarcelo/tindev-mobile">aqui</a>
 
 ## A Aplicação
  - A aplicação a ser desenvolvida será similiar ao Tinder, porém, para desenvolvedores;
