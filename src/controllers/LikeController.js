@@ -16,9 +16,25 @@ module.exports = {
 		if (!targetDev) {
 			return res.status(400).json({ error: 'Dev not exists' });
 		}
+
 		// Verificando se o usuário que recebeu like já tinha dado like no usuário logado
 		if (targetDev.likes.includes(loggedDev._id)) {
-			console.log('MATCH');
+			// Busca o socket do usuário logado
+			const loggedSocket = req.connectedUsers[user];
+			// Busca o socket do usuário que recebeu like
+			const targetSocket = req.connectedUsers[devId];
+
+			// Verifica se o usuário está conectado na aplicação
+			if (loggedSocket) {
+				// Avisa ao usuário logado que ocorreu um match no momento do like
+				req.io.to(loggedSocket).emit('match', targetDev);
+			}
+
+			// Verifica se o usuário está conectado na aplicação
+			if (targetSocket) {
+				// Avisa ao usuário que recebeu o like que ocorreu um match
+				req.io.to(targetSocket).emit('match', loggedDev);
+			}	
 		}
 		
 		// Adicionando o like no array
